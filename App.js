@@ -9,6 +9,7 @@ import RecentExpenses from './screens/RecentExpenses';
 import { GlobalStyles } from './constants/Style';
 import {Ionicons} from "@expo/vector-icons"
 import IconButton from './components/UI/IconButton';
+import ExportContextProvider from "./store/expo-context"
 
 export default function App() {
   const Stack=createNativeStackNavigator();
@@ -59,6 +60,7 @@ export default function App() {
   return (
     <>
       <StatusBar backgroundColor="black" style="light" />
+      <ExportContextProvider>
       <NavigationContainer>
         <Stack.Navigator
         screenOptions={{
@@ -80,6 +82,7 @@ export default function App() {
              />
         </Stack.Navigator>
       </NavigationContainer>
+      </ExportContextProvider>
     </>
   );
 }
